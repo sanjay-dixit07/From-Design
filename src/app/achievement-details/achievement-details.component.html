@@ -1,0 +1,53 @@
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <form #userForm="ngForm">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-4">
+                  Acheivement Details
+  
+  
+                  <div class="col-span-6">
+                    <label for="ach_name" class="block text-sm font-medium text-gray-700">Acheivement Name</label>
+                    <input type="text" name="ach_name" id="ach_name" autocomplete="acheivementname" ngModel #ach_name="ngModel" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+                  <br>
+                  <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                    <label for="descriptionach" class="block text-sm font-medium text-gray-700">Description</label>
+                    <input type="text" name="descriptionach" id="descriptionach" autocomplete="coursedescrip" ngModel #descriptionach="ngModel" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+                  <br>
+                  <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                    <label for="datepro" class="block text-sm font-medium text-gray-700">Date</label>
+                    <input type="text" name="datepro" id="datepro" autocomplete="completion-datepro" ngModel #datepro="ngModel"class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+                  <br>
+                  
+                  <div>
+                    <button type=reset (click)="addAchievement(ach_name.value,descriptionach.value,datepro.value)" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Add
+                    </button>
+                  </div>
+                  <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                    <button  (click)="saveData()"  type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Save
+                    </button> &nbsp;
+        
+                    <button  routerLink="/techskill" routerLinkActive="active" ariaCurrentWhenActive="page" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Next
+                    </button>
+                  </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      </form>  
+
+      <div *ngIf="achboolean" >
+        <li *ngFor="let list of achlist; index as i" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          {{i+1}}.{{list.achievement}} <br>
+                    {{list.description}} <br>
+                    {{list.startdate}}
+       </li>
+     </div>
+     

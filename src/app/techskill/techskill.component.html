@@ -1,0 +1,65 @@
+<div class="mt-5 md:mt-0 md:col-span-2">
+    <form #userForm="ngForm">
+       <div class="shadow overflow-hidden sm:rounded-md">
+          <div class="px-4 py-5 bg-white sm:p-6">
+             <div class="grid grid-cols-6 gap-6">
+              <div class="col-span-6 sm:col-span-4">
+                <label for="tech_skills" class="block text-sm font-medium text-gray-700">Technical Skills</label>
+                <div *ngIf="techskillboolean" >
+                  <li *ngFor="let skills of techskilllist; index as i" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{skills}}
+                 </li>
+               </div>
+                <input type="text" name="tech_skills" id="tech_skills" autocomplete="techskill" ngModel #tech_skills="ngModel"  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                
+              </div>
+
+              <div>
+                <button type=reset  (click)="addTechSkill(tech_skills.value)" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Add
+                </button>
+              </div>
+              <div class="col-span-6 sm:col-span-4">
+                
+                <label for="soft_skills" class="block text-sm font-medium text-gray-700">Soft Skills</label>
+                <div *ngIf="softskillboolean" >
+                  <li *ngFor="let skills of softskilllist; index as i" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{skills}}
+                 </li>
+               </div>
+                <input type="text" name="soft_skills" id="soft_skills" autocomplete="softskill" ngModel #soft_skills="ngModel" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+              <div>
+                <button type=reset type=reset (click)="addSoftSkill(soft_skills.value)" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Add
+                </button>
+              </div>
+              <div class="col-span-6 sm:col-span-4">
+                <label for="lang_user" class="block text-sm font-medium text-gray-700">Languages</label>
+                <div *ngIf="langboolean" >
+                  <li *ngFor="let list of langlist; index as i" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{list}}
+                 </li>
+               </div>
+                <input type="text" name="lang_user" id="lang_user" ngModel #lang_user="ngModel" autocomplete="lang" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div>
+                <button type=reset (click)="addLang(lang_user.value)" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Add
+                </button>
+              </div>
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <button  (click)="saveData()"  type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Save
+                </button> &nbsp;
+                <button  routerLink="/resumedisplay" routerLinkActive="active" ariaCurrentWhenActive="page"   type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Next
+                </button>
+              </div>
+            </div>
+            </div>
+            </div>
+        </form>
+     </div>
+    
